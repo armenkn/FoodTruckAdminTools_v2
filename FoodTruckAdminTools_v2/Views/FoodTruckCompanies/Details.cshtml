@@ -1,0 +1,78 @@
+@model FoodTruckAdminTools_v2.Models.FoodTruckCompany
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FoodTruckCompany</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BusinessName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyTypeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyTypeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PermitNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PermitNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HasVegeterianFood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HasVegeterianFood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HasVigenFood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HasVigenFood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HasCatering)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HasCatering)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HealthCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HealthCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaOfOperationString)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AreaOfOperationString)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfoString)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfoString)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

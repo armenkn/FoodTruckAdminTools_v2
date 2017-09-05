@@ -1,0 +1,124 @@
+
+
+@model FoodTruckAdminTools_v2.Models.FoodTruckCompany
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>FoodTruckCompany</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="BusinessName" class="col-md-2 control-label">Business Name</label>
+            <div class="col-md-10">
+                <input asp-for="BusinessName" class="form-control" />
+                <span asp-validation-for="BusinessName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CompanyTypeName" class="col-md-2 control-label">Company Type</label>
+            <div class="col-md-10"> 
+                <select asp-for="CompanyTypeName" class="selectpicker" asp-items="@(new SelectList(Enum.GetNames(typeof(CompanyTypeEnum))))" ></select>
+                <span asp-validation-for="CompanyTypeName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CuisineCategoyNames" class="col-md-2 control-label">Cuisine Categoies</label>
+            <div class="col-md-10">
+                <select asp-for="CuisineCategoyNames" class="selectpicker" multiple asp-items="@(new SelectList(Enum.GetNames(typeof(CuisineCategoryEnum))))"></select>
+                <span asp-validation-for="CuisineCategoyNames" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MealTypeNames" class="col-md-2 control-label">Meal Types</label>
+            <div class="col-md-10">
+                <select asp-for="MealTypeNames" class="selectpicker" multiple asp-items="@(new SelectList(Enum.GetNames(typeof(MealTypeEnum))))"></select>
+                <span asp-validation-for="MealTypeNames" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Company Owner</label>
+            <input type="button" value="+ Add" id="btnAddCompanyOwner" />
+            <div id="companyOwnerCreateDiv">
+                @Html.Partial("../PersonalInfo/PartialCreatePersonalInfo.cshtml", new PersonalInfo(), new ViewDataDictionary(this.ViewData) { { "RoleId", PersonRoleEnum.CompanyOwner.ToString() } } );
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PermitNumber" class="col-md-2 control-label">Permit Number</label>
+            <div class="col-md-10">
+                <input asp-for="PermitNumber" class="form-control" />
+                <span asp-validation-for="PermitNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="HasVegeterianFood" />
+                    <label asp-for="HasVegeterianFood">Has Vegeterian Food</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="HasVigenFood" />
+                    <label asp-for="HasVigenFood">Has Vigen Food</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="HasCatering" />
+                    <label asp-for="HasCatering">Has Catering</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="HealthCode" class="col-md-2 control-label">Health Code</label>
+            <div class="col-md-10">
+                <input asp-for="HealthCode" class="form-control" />
+                <span asp-validation-for="HealthCode" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AreaOfOperationString" class="col-md-2 control-label">Area Of Operation</label>
+            <div class="col-md-10">
+                <input asp-for="AreaOfOperationString" class="form-control" />
+                <span asp-validation-for="AreaOfOperationString" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AdditionalInfoString" class="col-md-2 control-label">Additional Info</label>
+            <div class="col-md-10">
+                <input asp-for="AdditionalInfoString" class="form-control" />
+                <span asp-validation-for="AdditionalInfoString" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

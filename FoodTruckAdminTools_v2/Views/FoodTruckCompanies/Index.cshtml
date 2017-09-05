@@ -1,0 +1,89 @@
+@model IEnumerable<FoodTruckAdminTools_v2.Models.FoodTruckCompany>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BusinessName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyTypeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PermitNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HasVegeterianFood)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HasVigenFood)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HasCatering)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HealthCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AreaOfOperationString)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AdditionalInfoString)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermitNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasVegeterianFood)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasVigenFood)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasCatering)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HealthCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaOfOperationString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdditionalInfoString)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,102 @@
+@model FoodTruckAdminTools_v2.Models.FoodTruckCompany
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>FoodTruckCompany</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="BusinessName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BusinessName" class="form-control" />
+                <span asp-validation-for="BusinessName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CompanyTypeName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CompanyTypeName" class="form-control" />
+                <span asp-validation-for="CompanyTypeName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PermitNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PermitNumber" class="form-control" />
+                <span asp-validation-for="PermitNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="HasVegeterianFood" />
+                    <label asp-for="HasVegeterianFood"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="HasVigenFood" />
+                    <label asp-for="HasVigenFood"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="HasCatering" />
+                    <label asp-for="HasCatering"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="HealthCode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="HealthCode" class="form-control" />
+                <span asp-validation-for="HealthCode" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AreaOfOperationString" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AreaOfOperationString" class="form-control" />
+                <span asp-validation-for="AreaOfOperationString" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AdditionalInfoString" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AdditionalInfoString" class="form-control" />
+                <span asp-validation-for="AdditionalInfoString" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

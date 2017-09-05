@@ -1,0 +1,82 @@
+@model FoodTruckAdminTools_v2.Models.FoodTruckCompany
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FoodTruckCompany</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BusinessName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyTypeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyTypeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PermitNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PermitNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HasVegeterianFood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HasVegeterianFood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HasVigenFood)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HasVigenFood)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HasCatering)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HasCatering)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HealthCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HealthCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaOfOperationString)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AreaOfOperationString)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfoString)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfoString)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
